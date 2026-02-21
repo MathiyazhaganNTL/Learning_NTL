@@ -10,6 +10,7 @@ interface ChatWindowProps {
     isTyping: boolean;
     onSendMessage: (message: string) => void;
     onClearChat: () => void;
+    onClose: () => void;
 }
 
 // Quick action suggestions for new conversations
@@ -20,7 +21,7 @@ const QUICK_ACTIONS = [
     { icon: HelpCircle, label: 'FAQ', prompt: 'Tell me about certifications and enrollment' },
 ];
 
-export function ChatWindow({ isOpen, messages, isTyping, onSendMessage, onClearChat }: ChatWindowProps) {
+export function ChatWindow({ isOpen, messages, isTyping, onSendMessage, onClearChat, onClose }: ChatWindowProps) {
     const [input, setInput] = useState('');
     const messagesEndRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -68,7 +69,11 @@ export function ChatWindow({ isOpen, messages, isTyping, onSendMessage, onClearC
             <div className="flex flex-col h-[600px] max-sm:h-[85vh] bg-white rounded-2xl max-sm:rounded-b-none shadow-2xl shadow-black/15 border border-gray-200 overflow-hidden">
 
                 {/* ─── Header ─── */}
-                <div className="flex items-center justify-between px-5 py-3.5 bg-[#7B1E3A] text-white shrink-0">
+                <div
+                    className="flex items-center justify-between px-5 py-3.5 bg-[#7B1E3A] text-white shrink-0 cursor-pointer select-none"
+                    onClick={onClose}
+                    title="Click to close"
+                >
                     <div className="flex items-center gap-3">
                         <div className="w-9 h-9 rounded-full bg-white/15 flex items-center justify-center shadow-inner">
                             <BrainCircuit className="w-5 h-5 text-white" />
@@ -88,7 +93,7 @@ export function ChatWindow({ isOpen, messages, isTyping, onSendMessage, onClearC
                     <div className="flex items-center gap-1">
                         {messages.length > 1 && (
                             <button
-                                onClick={onClearChat}
+                                onClick={(e) => { e.stopPropagation(); onClearChat(); }}
                                 className="p-2 rounded-lg hover:bg-white/15 transition-colors duration-200"
                                 title="Clear conversation"
                             >

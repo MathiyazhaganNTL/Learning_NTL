@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { FloatingButton } from './FloatingButton';
 import { ChatWindow } from './ChatWindow';
 import { askAI } from '@/api/ai';
@@ -25,6 +25,21 @@ export function AIChatBot() {
             return !prev;
         });
     }, []);
+
+    const closeChat = useCallback(() => {
+        setIsOpen(false);
+    }, []);
+
+    // Close on ESC key press
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape' && isOpen) {
+                closeChat();
+            }
+        };
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [isOpen, closeChat]);
 
     const handleSendMessage = useCallback(async (content: string) => {
         // Add user message
@@ -84,6 +99,7 @@ export function AIChatBot() {
                 isTyping={isTyping}
                 onSendMessage={handleSendMessage}
                 onClearChat={handleClearChat}
+                onClose={closeChat}
             />
 
             {/* Floating Action Button */}

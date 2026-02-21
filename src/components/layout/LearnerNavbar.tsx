@@ -1,6 +1,6 @@
 
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { GraduationCap, BookOpen, LayoutDashboard, Menu, X, User, LogOut, Settings, ArrowLeft, Award } from 'lucide-react';
+import { GraduationCap, BookOpen, LayoutDashboard, Menu, X, User, LogOut, Settings, ArrowLeft, Award, Sun, Moon, Monitor } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -11,11 +11,13 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useAuth } from '@/contexts/AuthContext';
+import { useTheme } from '@/contexts/ThemeContext';
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 
 export function LearnerNavbar() {
   const { user, isAuthenticated, logout } = useAuth();
+  const { theme, setTheme } = useTheme();
   const location = useLocation();
   const navigate = useNavigate();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -197,6 +199,57 @@ export function LearnerNavbar() {
                           </Link>
                         </DropdownMenuItem>
                       ))}
+                    </div>
+
+                    {/* Theme Switcher */}
+                    <div
+                      className="px-3 py-3 border-t border-border/40 animate-in slide-in-from-left-2 fade-in duration-500"
+                      style={{ animationDelay: '200ms', animationFillMode: 'backwards' }}
+                    >
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="flex items-center justify-center w-5 h-5">
+                          {theme === 'dark' ? (
+                            <Moon className="h-3.5 w-3.5 text-primary" />
+                          ) : theme === 'light' ? (
+                            <Sun className="h-3.5 w-3.5 text-primary" />
+                          ) : (
+                            <Monitor className="h-3.5 w-3.5 text-primary" />
+                          )}
+                        </div>
+                        <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Theme</span>
+                      </div>
+                      <div className="flex items-center bg-muted/50 rounded-xl p-1 gap-1">
+                        {[
+                          { value: 'light' as const, icon: Sun, label: 'Light' },
+                          { value: 'dark' as const, icon: Moon, label: 'Dark' },
+                          { value: 'system' as const, icon: Monitor, label: 'System' },
+                        ].map((option) => (
+                          <button
+                            key={option.value}
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              setTheme(option.value);
+                            }}
+                            className={cn(
+                              'flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-300',
+                              theme === option.value
+                                ? 'bg-primary text-primary-foreground shadow-md shadow-primary/25 scale-[1.02]'
+                                : 'text-muted-foreground hover:text-foreground hover:bg-background/60'
+                            )}
+                          >
+                            <option.icon
+                              className={cn(
+                                'h-3.5 w-3.5 transition-all duration-500',
+                                theme === option.value
+                                  ? 'rotate-0 scale-110'
+                                  : 'rotate-[-30deg] scale-90 opacity-60'
+                              )}
+                            />
+                            <span>{option.label}</span>
+                          </button>
+                        ))}
+                      </div>
                     </div>
 
                     {/* Logout Section */}

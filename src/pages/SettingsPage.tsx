@@ -16,27 +16,72 @@ import { Badge } from '@/components/ui/badge';
 import {
   User, Lock, Bell, Shield, LogOut, Globe, Moon, Sun, Smartphone,
   MapPin, Briefcase, GraduationCap, Laptop, Eye, AlertCircle,
-  CreditCard, CheckCircle2, RotateCcw, Camera, Mail, LayoutDashboard
+  CreditCard, CheckCircle2, RotateCcw, Camera, Mail, LayoutDashboard, Loader2
 } from 'lucide-react';
 import { toast } from 'sonner';
 import { useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
+import { saveProfile, getProfile } from '@/api/profileService';
 
 export default function SettingsPage() {
   const { user, logout } = useAuth();
   const { theme, setTheme } = useTheme();
   const [isLoading, setIsLoading] = useState(false);
+  const [isProfileLoading, setIsProfileLoading] = useState(true);
 
   // Profile State
   const [profile, setProfile] = useState({
     displayName: user?.name || '',
     username: user?.name?.toLowerCase().replace(/\s/g, '') || '',
     email: user?.email || '',
-    phone: '+1 (555) 000-0000',
-    bio: 'Passionate learner and explorer.',
-    location: 'New York, USA',
-    interests: 'React, Design, AI',
+    phone: '',
+    bio: '',
+    location: '',
+    interests: '',
   });
+
+  // Load profile from Firebase Realtime Database on mount
+  useEffect(() => {
+    async function loadProfile() {
+      if (!user?.email) {
+        setIsProfileLoading(false);
+        return;
+      }
+
+      try {
+        const savedProfile = await getProfile(user.email);
+        if (savedProfile) {
+          setProfile({
+            displayName: savedProfile.displayName || user.name || '',
+            username: savedProfile.username || user.name?.toLowerCase().replace(/\s/g, '') || '',
+            email: user.email,
+            phone: savedProfile.phone || '',
+            bio: savedProfile.bio || '',
+            location: savedProfile.location || '',
+            interests: savedProfile.interests || '',
+          });
+        } else {
+          // First time — use defaults from auth
+          setProfile({
+            displayName: user.name || '',
+            username: user.name?.toLowerCase().replace(/\s/g, '') || '',
+            email: user.email,
+            phone: '',
+            bio: '',
+            location: '',
+            interests: '',
+          });
+        }
+      } catch (error) {
+        console.error('Failed to load profile from database:', error);
+        toast.error('Failed to load profile data. Using local defaults.');
+      } finally {
+        setIsProfileLoading(false);
+      }
+    }
+
+    loadProfile();
+  }, [user?.email, user?.name]);
 
   // Security State
   const [security, setSecurity] = useState({
@@ -57,13 +102,30 @@ export default function SettingsPage() {
     securityAlerts: true,
   });
 
-  // Handlers
+  // Save profile to Firebase Realtime Database
   const handleProfileUpdate = async () => {
+    if (!user?.email) {
+      toast.error('You must be logged in to save profile changes.');
+      return;
+    }
+
     setIsLoading(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsLoading(false);
-    toast.success('Profile updated successfully');
+    try {
+      await saveProfile(user.email, {
+        displayName: profile.displayName,
+        username: profile.username,
+        phone: profile.phone,
+        bio: profile.bio,
+        location: profile.location,
+        interests: profile.interests,
+      });
+      toast.success('Profile saved to database successfully! ✅');
+    } catch (error) {
+      console.error('Failed to save profile:', error);
+      toast.error('Failed to save profile. Please check your database rules and try again.');
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleSecurityUpdate = async () => {
@@ -168,7 +230,15 @@ export default function SettingsPage() {
             </Card>
 
             {/* Profile Edit Form */}
-            <Card className="md:col-span-8 border-primary/10 shadow-sm">
+            <Card className="md:col-span-8 border-primary/10 shadow-sm relative">
+              {isProfileLoading && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-background/80 backdrop-blur-sm rounded-lg">
+                  <div className="flex flex-col items-center gap-3">
+                    <Loader2 className="h-8 w-8 animate-spin text-primary" />
+                    <p className="text-sm text-muted-foreground font-medium">Loading profile from database...</p>
+                  </div>
+                </div>
+              )}
               <CardHeader>
                 <CardTitle>Personal Information</CardTitle>
                 <CardDescription>Update your personal details and public profile.</CardDescription>
@@ -250,7 +320,7 @@ export default function SettingsPage() {
                 </div>
               </CardContent>
               <CardFooter className="flex justify-end border-t bg-muted/20 px-6 py-4">
-                <Button onClick={handleProfileUpdate} disabled={isLoading} className="w-full sm:w-auto">
+                <Button onClick={handleProfileUpdate} disabled={isLoading || isProfileLoading} className="w-full sm:w-auto">
                   {isLoading ? (
                     <>
                       <RotateCcw className="mr-2 h-4 w-4 animate-spin" />

@@ -11,9 +11,9 @@ const GEMINI_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || '';
 const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/models';
 
 // Fallback chain: try primary model first, then fall back
-const MODELS = ['gemini-2.5-flash', 'gemini-2.0-flash'];
+const MODELS = ['gemini-2.0-flash', 'gemini-1.5-flash'];
 const MAX_RETRIES = 2;
-const RETRY_DELAY_MS = 3000;
+const RETRY_DELAY_MS = 2000;
 
 // System prompt that constrains the AI to learning-related topics only
 const SYSTEM_PROMPT = `You are "Learn2PSG AI", an Academic Learning Assistant embedded in the Learn2PSG Learning Management System.
@@ -146,9 +146,9 @@ export async function askAI(
         }
 
         // All models and retries exhausted
-        return "I'm experiencing high demand right now. Please wait a moment and try again. 🎓";
+        return "I'm experiencing high demand right now. Please wait a moment and try again. 🎓\n\n_If this keeps happening, your API key may have hit its free-tier rate limit. Wait 1-2 minutes before trying again._";
     } catch (error) {
         console.error('AI Assistant error:', error);
-        return "I'm having trouble connecting right now. Please try again in a moment. If this persists, check your API key configuration.";
+        return `I'm having trouble connecting right now. Error: ${error instanceof Error ? error.message : 'Unknown error'}. Please check your API key configuration and try again.`;
     }
 }
