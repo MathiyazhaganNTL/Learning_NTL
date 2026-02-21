@@ -21,7 +21,7 @@ const steps = [
         title: "Learn at Your Pace",
         description: "Access high-quality video lessons, interactive quizzes, and reading materials anytime, anywhere.",
         icon: Play,
-        gradient: "from-violet-500 to-purple-600",
+        gradient: "from-rose-600 to-rose-800",
         glowColor: "rgba(139, 92, 246, 0.5)",
         borderColor: "border-violet-500/50",
         textColor: "text-violet-400"

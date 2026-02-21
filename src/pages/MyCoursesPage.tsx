@@ -100,12 +100,12 @@ export default function MyCoursesPage() {
                     id: 'all',
                     label: 'All Courses',
                     icon: BookOpen,
-                    colorClass: 'text-purple-600 dark:text-purple-400',
-                    bgClass: 'bg-purple-500/10',
-                    activeBorder: 'border-purple-500/50',
-                    activeRing: 'ring-purple-500/20',
-                    gradient: 'from-purple-500/5 to-indigo-500/5',
-                    activeGradient: 'from-purple-500/10 to-indigo-500/10'
+                    colorClass: 'text-rose-700 dark:text-rose-400',
+                    bgClass: 'bg-rose-500/10',
+                    activeBorder: 'border-rose-500/50',
+                    activeRing: 'ring-rose-500/20',
+                    gradient: 'from-rose-500/5 to-rose-700/5',
+                    activeGradient: 'from-rose-500/10 to-rose-700/10'
                   },
                   {
                     id: 'yet_to_start',

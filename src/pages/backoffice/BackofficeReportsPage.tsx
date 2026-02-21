@@ -165,7 +165,7 @@ export default function BackofficeReportsPage() {
         {/* Toolbar */}
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between sticky top-[4rem] z-20 bg-background/95 backdrop-blur-sm py-2">
           <h2 className="text-xl font-bold tracking-tight text-foreground flex items-center gap-2">
-            <span className="h-6 w-1 rounded-full bg-gradient-to-b from-purple-500 to-pink-500 shadow-md" />
+            <span className="h-6 w-1 rounded-full bg-gradient-to-b from-rose-700 to-rose-500 shadow-md" />
             Detailed Reports
           </h2>
 
@@ -239,7 +239,7 @@ export default function BackofficeReportsPage() {
               <div className="col-span-1 md:col-span-3 flex items-center gap-3">
                 <Avatar className="h-9 w-9 border-2 border-background ring-1 ring-border/50 transition-all group-hover:ring-primary/30">
                   <AvatarImage src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${row.name}`} />
-                  <AvatarFallback className="bg-gradient-to-br from-indigo-500 to-purple-500 text-white text-xs">
+                  <AvatarFallback className="bg-gradient-to-br from-rose-700 to-rose-900 text-white text-xs">
                     {row.name.charAt(0)}
                   </AvatarFallback>
                 </Avatar>
@@ -279,7 +279,7 @@ export default function BackofficeReportsPage() {
                     className={cn(
                       "h-full rounded-full transition-all duration-1000 ease-out",
                       row.completion === 100 ? "bg-gradient-to-r from-emerald-500 to-green-500" :
-                        row.completion > 0 ? "bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" :
+                        row.completion > 0 ? "bg-gradient-to-r from-rose-600 via-rose-700 to-rose-800" :
                           "bg-muted"
                     )}
                     style={{ width: `${row.completion}%` }}

@@ -76,12 +76,12 @@ export default function LoginPage() {
               <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-white/5 shadow-xl transition-all group-hover:bg-white/10">
                 <img
                   src="/logo.png"
-                  alt="LearnSphere Logo"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(113,75,110,0.5)]"
+                  alt="Learn2PSG Logo"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_10px_rgba(123,30,58,0.5)]"
                 />
               </div>
               <span className="font-display text-2xl font-extrabold tracking-tight text-foreground transition-colors group-hover:text-primary">
-                LearnSphere
+                Learn2PSG
               </span>
             </div>
           </div>

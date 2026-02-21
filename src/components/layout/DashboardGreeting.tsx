@@ -39,13 +39,13 @@ export function DashboardGreeting({ name, className }: DashboardGreetingProps) {
             )}
         >
             {/* Animated Glow Border Effect */}
-            <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-indigo-500/0 via-purple-500/10 to-indigo-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="absolute inset-0 -z-10 rounded-full bg-gradient-to-r from-rose-700/0 via-rose-700/10 to-rose-700/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
             {/* Avatar Section */}
             <div className="relative">
                 <Avatar className="h-9 w-9 border-2 border-background ring-2 ring-primary/10 transition-all duration-300 group-hover:ring-primary/30">
                     <AvatarImage src={`https://api.dicebear.com/9.x/notionists/svg?seed=${name}&backgroundColor=transparent`} />
-                    <AvatarFallback className="bg-gradient-to-br from-indigo-500 to-purple-600 text-white font-bold text-xs">
+                    <AvatarFallback className="bg-gradient-to-br from-rose-700 to-rose-900 text-white font-bold text-xs">
                         {name.charAt(0).toUpperCase()}
                     </AvatarFallback>
                 </Avatar>
@@ -64,7 +64,7 @@ export function DashboardGreeting({ name, className }: DashboardGreetingProps) {
                 </div>
 
                 <div className="flex items-center gap-1">
-                    <span className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70 group-hover:from-indigo-600 group-hover:to-purple-600 transition-all duration-300">
+                    <span className="text-sm font-bold bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/70 group-hover:from-rose-700 group-hover:to-rose-900 transition-all duration-300">
                         {name}
                     </span>
                     <Sparkles className="h-3 w-3 text-yellow-500 opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:rotate-12" />

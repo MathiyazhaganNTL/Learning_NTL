@@ -509,7 +509,7 @@ export default function BackofficeDashboard() {
                 {visibleColumns.includes('participantName') && (
                   <div className="col-span-1 md:col-span-2 flex items-center gap-3">
                     <div className="relative h-8 w-8 overflow-hidden rounded-full ring-2 ring-border/50 transition-all group-hover:ring-primary/30 shrink-0">
-                      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-indigo-500 to-purple-500 text-[10px] font-bold text-white">
+                      <div className="flex h-full w-full items-center justify-center bg-gradient-to-br from-rose-700 to-rose-900 text-[10px] font-bold text-white">
                         {user.participantName.charAt(0)}
                       </div>
                     </div>
@@ -556,7 +556,7 @@ export default function BackofficeDashboard() {
                         className={cn(
                           "h-full rounded-full transition-all duration-1000 ease-out",
                           user.completionPercentage === 100 ? "bg-gradient-to-r from-emerald-500 to-green-500" :
-                            user.completionPercentage > 0 ? "bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500" :
+                            user.completionPercentage > 0 ? "bg-gradient-to-r from-rose-600 via-rose-700 to-rose-800" :
                               "bg-muted"
                         )}
                         style={{ width: `${user.completionPercentage}%` }}

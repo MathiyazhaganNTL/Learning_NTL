@@ -4,51 +4,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* LearnSphere Design System - Odoo-Inspired Theme */
+/* Learn2PSG Design System - Odoo-Inspired Theme */
 
 @layer base {
   :root {
-    /* ===== LIGHT MODE ===== */
+    /* ===== LIGHT MODE - Academic Maroon Theme ===== */
 
     /* Core Colors */
     --background: 0 0% 100%;
     /* #FFFFFF - White */
-    --foreground: 0 0% 6.7%;
-    /* #111111 - Dark Gray */
+    --foreground: 0 0% 13.3%;
+    /* #222222 - Primary Text */
 
     /* Card & Popover */
     --card: 0 0% 100%;
     /* #FFFFFF */
-    --card-foreground: 0 0% 6.7%;
-    /* #111111 */
+    --card-foreground: 0 0% 13.3%;
+    /* #222222 */
     --popover: 0 0% 100%;
     /* #FFFFFF */
-    --popover-foreground: 0 0% 6.7%;
-    /* #111111 */
+    --popover-foreground: 0 0% 13.3%;
+    /* #222222 */
 
-    /* Primary - Odoo Purple */
-    --primary: 315 22% 37%;
-    /* #714B6E - Deep Purple */
+    /* Primary - Deep Academic Maroon */
+    --primary: 343 61% 30%;
+    /* #7B1E3A - Deep Maroon */
     --primary-foreground: 0 0% 100%;
     /* White */
 
-    /* Accent - Blue CTA */
-    --accent: 204 93% 47%;
-    /* #0D8FDC - Bright Blue */
+    /* Accent - Darker Maroon Hover */
+    --accent: 349 76% 24%;
+    /* #6D0F1B - Darker Maroon */
     --accent-foreground: 0 0% 100%;
     /* White */
 
-    /* Secondary - Soft Light Blue */
-    --secondary: 201 93% 95%;
-    /* #E7F5FC - Soft Light Blue */
-    --secondary-foreground: 0 0% 6.7%;
-    /* Dark Gray */
+    /* Secondary - Soft Warm Gray */
+    --secondary: 0 0% 96.1%;
+    /* #F5F5F5 - Light Background */
+    --secondary-foreground: 0 0% 13.3%;
+    /* #222222 */
 
     /* Muted */
-    --muted: 210 20% 96%;
-    /* #F4F5F6 - Light Gray */
-    --muted-foreground: 215 16% 47%;
-    /* Gray text */
+    --muted: 0 0% 96.1%;
+    /* #F5F5F5 - Light Gray */
+    --muted-foreground: 0 0% 40%;
+    /* #666666 - Secondary Text */
 
     /* Success - Light Green */
     --success: 88 87% 80%;
@@ -69,12 +69,12 @@
     /* White */
 
     /* Border & Input */
-    --border: 220 13% 91%;
-    /* #E5E7EB - Gray */
-    --input: 220 13% 91%;
-    /* #E5E7EB */
-    --ring: 204 93% 47%;
-    /* Accent Blue */
+    --border: 0 0% 87.8%;
+    /* #E0E0E0 - Borders */
+    --input: 0 0% 87.8%;
+    /* #E0E0E0 */
+    --ring: 343 61% 30%;
+    /* Maroon ring */
 
     /* Border Radius */
     --radius: 0.75rem;
@@ -84,78 +84,78 @@
     --badge-newbie: 201 93% 70%;
     --badge-explorer: 88 87% 60%;
     --badge-achiever: 38 92% 50%;
-    --badge-specialist: 315 22% 50%;
-    --badge-expert: 280 67% 52%;
-    --badge-master: 204 93% 47%;
+    --badge-specialist: 343 61% 45%;
+    --badge-expert: 349 76% 35%;
+    --badge-master: 343 61% 30%;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(315 22% 37%) 0%, hsl(204 93% 47%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(315 22% 37%) 0%, hsl(204 93% 47%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(204 93% 47%), hsl(204 93% 35%));
+    --gradient-primary: linear-gradient(135deg, hsl(343 61% 30%) 0%, hsl(349 76% 24%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(343 61% 30%) 0%, hsl(343 61% 20%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(343 61% 30%), hsl(349 76% 24%));
     --gradient-success: linear-gradient(135deg, hsl(88 87% 80%) 0%, hsl(88 70% 65%) 100%);
-    --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%);
+    --gradient-card: linear-gradient(180deg, #FFFFFF 0%, #F5F5F5 100%);
 
     /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(0 0% 6.7% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(0 0% 6.7% / 0.1), 0 2px 4px -2px hsl(0 0% 6.7% / 0.1);
-    --shadow-lg: 0 10px 15px -3px hsl(0 0% 6.7% / 0.1), 0 4px 6px -4px hsl(0 0% 6.7% / 0.1);
-    --shadow-xl: 0 20px 25px -5px hsl(0 0% 6.7% / 0.1), 0 8px 10px -6px hsl(0 0% 6.7% / 0.1);
-    --shadow-card: 0 1px 3px hsl(0 0% 6.7% / 0.08), 0 1px 2px -1px hsl(0 0% 6.7% / 0.08);
-    --shadow-card-hover: 0 10px 40px -10px hsl(204 93% 47% / 0.25);
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 13.3% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 13.3% / 0.1), 0 2px 4px -2px hsl(0 0% 13.3% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 13.3% / 0.1), 0 4px 6px -4px hsl(0 0% 13.3% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(0 0% 13.3% / 0.1), 0 8px 10px -6px hsl(0 0% 13.3% / 0.1);
+    --shadow-card: 0 1px 3px hsl(0 0% 13.3% / 0.08), 0 1px 2px -1px hsl(0 0% 13.3% / 0.08);
+    --shadow-card-hover: 0 10px 40px -10px hsl(343 61% 30% / 0.25);
 
     /* Sidebar */
     --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 0 0% 6.7%;
-    --sidebar-primary: 315 22% 37%;
+    --sidebar-foreground: 0 0% 13.3%;
+    --sidebar-primary: 343 61% 30%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 201 93% 95%;
-    --sidebar-accent-foreground: 0 0% 6.7%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 204 93% 47%;
+    --sidebar-accent: 343 61% 95%;
+    --sidebar-accent-foreground: 0 0% 13.3%;
+    --sidebar-border: 0 0% 87.8%;
+    --sidebar-ring: 343 61% 30%;
   }
 
   .dark {
-    /* ===== DARK MODE ===== */
+    /* ===== DARK MODE - Academic Maroon Theme ===== */
 
     /* Core Colors */
-    --background: 222 47% 6%;
-    /* #0A0E17 - Deep Navy */
+    --background: 0 0% 7%;
+    /* #121212 - Deep Dark */
     --foreground: 0 0% 98%;
     /* Off-white */
 
     /* Card & Popover */
-    --card: 222 47% 8%;
-    /* #0E1420 - Darker Navy */
+    --card: 0 0% 10%;
+    /* #1A1A1A - Dark Card */
     --card-foreground: 0 0% 98%;
     /* Off-white */
-    --popover: 222 47% 8%;
-    /* #0E1420 */
+    --popover: 0 0% 10%;
+    /* #1A1A1A */
     --popover-foreground: 0 0% 98%;
     /* Off-white */
 
-    /* Primary - Lighter Purple */
-    --primary: 315 35% 55%;
-    /* #A86EA0 - Lighter Purple */
+    /* Primary - Lighter Maroon for dark mode */
+    --primary: 343 55% 45%;
+    /* Lighter Maroon */
     --primary-foreground: 0 0% 100%;
     /* White */
 
-    /* Accent - Brighter Blue */
-    --accent: 204 93% 55%;
-    /* #33AAEE - Brighter Blue */
+    /* Accent - Warm Rose */
+    --accent: 349 60% 38%;
+    /* Warm Rose */
     --accent-foreground: 0 0% 100%;
     /* White */
 
-    /* Secondary - Dark Blue-Gray */
-    --secondary: 217 33% 17%;
-    /* #1D2638 - Muted/Secondary */
+    /* Secondary - Dark Warm Gray */
+    --secondary: 0 0% 15%;
+    /* #262626 */
     --secondary-foreground: 0 0% 98%;
     /* Off-white */
 
     /* Muted */
-    --muted: 217 33% 17%;
-    /* #1D2638 - Dark Blue-Gray */
-    --muted-foreground: 215 20% 65%;
-    /* Lighter gray text */
+    --muted: 0 0% 15%;
+    /* Dark Warm Gray */
+    --muted-foreground: 0 0% 60%;
+    /* Light gray text */
 
     /* Success */
     --success: 88 70% 50%;
@@ -176,21 +176,21 @@
     /* White */
 
     /* Border & Input */
-    --border: 217 33% 20%;
-    /* Slightly lighter than muted */
-    --input: 217 33% 20%;
-    --ring: 204 93% 55%;
-    /* Brighter Blue */
+    --border: 0 0% 20%;
+    /* Dark borders */
+    --input: 0 0% 20%;
+    --ring: 343 55% 45%;
+    /* Maroon ring */
 
     /* Sidebar */
-    --sidebar-background: 222 47% 8%;
+    --sidebar-background: 0 0% 10%;
     --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 315 35% 55%;
+    --sidebar-primary: 343 55% 45%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent: 0 0% 15%;
     --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 217 33% 20%;
-    --sidebar-ring: 204 93% 55%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 343 55% 45%;
   }
 }
 
@@ -412,8 +412,13 @@
 }
 
 @keyframes mirror-shine {
-  from { transform: translateX(-100%) skewX(-15deg); }
-  to { transform: translateX(200%) skewX(-15deg); }
+  from {
+    transform: translateX(-100%) skewX(-15deg);
+  }
+
+  to {
+    transform: translateX(200%) skewX(-15deg);
+  }
 }
 
 .animate-mirror-shine {

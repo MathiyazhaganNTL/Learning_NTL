@@ -46,7 +46,7 @@ export function RoleSelector({ selectedRole, onSelect }: RoleSelectorProps) {
                 ref={containerRef}
                 onMouseMove={handleMouseMove}
                 onMouseLeave={handleMouseLeave}
-                className="relative grid grid-cols-3 gap-1 p-1.5 bg-muted/20 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(113,75,110,0.15)] ring-1 ring-white/5"
+                className="relative grid grid-cols-3 gap-1 p-1.5 bg-muted/20 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-500 hover:shadow-[0_0_25px_rgba(123,30,58,0.15)] ring-1 ring-white/5"
             >
                 {/* 1. Dynamic Mouse-Follow Glow (Container Level) */}
                 <div
@@ -102,7 +102,7 @@ export function RoleSelector({ selectedRole, onSelect }: RoleSelectorProps) {
                             )}>
                                 <Icon className={cn(
                                     "h-5 w-5 transition-all duration-300",
-                                    isActive && "drop-shadow-[0_0_10px_rgba(113,75,110,0.6)]",
+                                    isActive && "drop-shadow-[0_0_10px_rgba(123,30,58,0.6)]",
                                     isHovered && "animate-pulse"
                                 )} />
 

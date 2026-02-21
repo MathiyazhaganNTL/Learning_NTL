@@ -12,7 +12,7 @@ export function LearnerLayout() {
         <div className="container">
           <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
             <p className="text-sm text-muted-foreground">
-              © 2024 LearnSphere. All rights reserved.
+              © 2024 Learn2PSG. All rights reserved.
             </p>
             <div className="flex gap-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground">

@@ -88,7 +88,7 @@ export default function SettingsPage() {
     )}>
       <div className="mb-8 flex items-center justify-between">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
+          <h1 className="text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary to-rose-800">
             Account Settings
           </h1>
           <p className="text-muted-foreground mt-1">
@@ -134,10 +134,10 @@ export default function SettingsPage() {
 
             {/* Profile Sidebar Card */}
             <Card className="md:col-span-4 h-fit border-primary/10 shadow-md overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-primary/20 via-purple-500/10 to-blue-500/10" />
+              <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-r from-primary/20 via-rose-500/10 to-rose-400/10" />
               <CardContent className="pt-12 flex flex-col items-center text-center relative">
                 <div className="relative group cursor-pointer mb-4">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-full opacity-70 blur group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute -inset-1 bg-gradient-to-r from-primary to-rose-800 rounded-full opacity-70 blur group-hover:opacity-100 transition-opacity duration-300" />
                   <Avatar className="h-28 w-28 border-4 border-background relative">
                     <AvatarImage src={user?.avatar || `https://api.dicebear.com/9.x/notionists/svg?seed=${user?.name}&backgroundColor=transparent`} />
                     <AvatarFallback className="text-4xl">{user?.name?.[0]}</AvatarFallback>
@@ -361,7 +361,7 @@ export default function SettingsPage() {
           <Card className="border-primary/10 shadow-sm">
             <CardHeader>
               <CardTitle>Appearance & Locale</CardTitle>
-              <CardDescription>Customize how LearnSphere looks and behaves.</CardDescription>
+              <CardDescription>Customize how Learn2PSG looks and behaves.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">

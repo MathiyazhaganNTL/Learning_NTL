@@ -52,8 +52,8 @@ export function LearnerNavbar() {
           <div className="relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-white/5 shadow-2xl transition-all group-hover:bg-white/10 group-hover:shadow-primary/20">
             <img
               src="/logo.png"
-              alt="LearnSphere Logo"
-              className="h-full w-full object-cover mix-blend-normal transition-all duration-500 group-hover:scale-110 drop-shadow-[0_0_12px_rgba(113,75,110,0.6)]"
+              alt="Learn2PSG Logo"
+              className="h-full w-full object-cover mix-blend-normal transition-all duration-500 group-hover:scale-110 drop-shadow-[0_0_12px_rgba(123,30,58,0.6)]"
             />
             {/* Subtle glow orb behind logo */}
             <div className="absolute inset-0 bg-primary/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -65,7 +65,7 @@ export function LearnerNavbar() {
               ? "text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
               : "text-foreground group-hover:text-primary"
           )}>
-            LearnSphere
+            Learn2PSG
           </span>
         </Link>
 
@@ -108,7 +108,7 @@ export function LearnerNavbar() {
                   <Button variant="ghost" className="relative h-10 w-10 rounded-full ring-2 ring-primary/20 hover:ring-primary/50 transition-all duration-300 p-0 overflow-hidden group">
                     <Avatar className="h-full w-full transition-transform duration-500 group-hover:scale-110">
                       <AvatarImage src={user?.avatar} alt={user?.name} className="object-cover" />
-                      <AvatarFallback className="bg-gradient-to-br from-primary to-purple-600 text-white font-bold">
+                      <AvatarFallback className="bg-gradient-to-br from-primary to-rose-800 text-white font-bold">
                         {user?.name?.charAt(0).toUpperCase()}
                       </AvatarFallback>
                     </Avatar>
@@ -130,7 +130,7 @@ export function LearnerNavbar() {
                       <div className="flex items-center gap-4">
                         <div className="relative">
                           {/* Avatar Glow Ring */}
-                          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-purple-600 opacity-60 blur-sm group-hover:opacity-100 transition-opacity duration-500" />
+                          <div className="absolute -inset-1 rounded-full bg-gradient-to-r from-primary to-rose-800 opacity-60 blur-sm group-hover:opacity-100 transition-opacity duration-500" />
                           <Avatar className="relative h-12 w-12 ring-2 ring-background shadow-lg">
                             <AvatarImage src={user?.avatar} className="object-cover" />
                             <AvatarFallback className="bg-primary text-white font-bold">{user?.name?.charAt(0)}</AvatarFallback>

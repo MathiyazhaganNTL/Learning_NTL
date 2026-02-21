@@ -14,11 +14,11 @@ interface InteractiveCardProps extends HTMLAttributes<HTMLDivElement> {
 export function InteractiveCard({
     children,
     className,
-    glowColor = 'rgba(113, 75, 110, 0.3)',
+    glowColor = 'rgba(123, 30, 58, 0.3)',
     duration = 4,
     borderWidth = 2,
-    colorFrom = '#714B6E',
-    colorTo = '#0D8FDC',
+    colorFrom = '#7B1E3A',
+    colorTo = '#6D0F1B',
     ...props
 }: InteractiveCardProps) {
     const [isHovered, setIsHovered] = useState(false);
@@ -126,7 +126,7 @@ export function HoverCard({
                         WebkitMaskComposite: 'xor',
                         borderRadius: 'inherit',
                         offsetPath: `rect(0 100% 100% 0 round 1rem)`,
-                        background: `linear-gradient(to right, transparent, #714B6E, #0D8FDC, transparent)`,
+                        background: `linear-gradient(to right, transparent, #7B1E3A, #6D0F1B, transparent)`,
                         width: isHovered ? '100px' : '60px',
                         height: '2px',
                         filter: isHovered ? 'blur(2px)' : 'none',

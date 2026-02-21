@@ -225,8 +225,8 @@ export function AuthIllustration() {
                 <FloatingIcon
                     icon={BarChart}
                     position="top-1/2 -left-28"
-                    bg="bg-purple-500/10"
-                    color="text-purple-400"
+                    bg="bg-rose-500/10"
+                    color="text-rose-400"
                     rotate={-12}
                     delay={2.5}
                     duration={6}

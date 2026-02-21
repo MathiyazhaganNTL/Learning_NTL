@@ -75,13 +75,13 @@ export function BackofficeLayout() {
             <div className="relative flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg bg-white/5 transition-all group-hover:bg-white/10">
               <img
                 src="/logo.png"
-                alt="LearnSphere Logo"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_8px_rgba(113,75,110,0.5)]"
+                alt="Learn2PSG Logo"
+                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110 drop-shadow-[0_0_8px_rgba(123,30,58,0.5)]"
               />
             </div>
             {!collapsed && (
               <span className="font-display text-lg font-extrabold tracking-tight text-foreground transition-colors group-hover:text-primary">
-                LearnSphere
+                Learn2PSG
               </span>
             )}
           </Link>

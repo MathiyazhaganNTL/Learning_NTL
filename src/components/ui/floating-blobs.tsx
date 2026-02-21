@@ -30,7 +30,7 @@ export function FloatingBlobs() {
             />
             <FloatingBlob
                 className="w-80 h-80 -bottom-20 left-1/4 animate-blob delay-4000"
-                color="bg-purple-500"
+                color="bg-rose-700"
             />
             <FloatingBlob
                 className="w-64 h-64 top-1/4 right-1/3 animate-blob delay-2000"

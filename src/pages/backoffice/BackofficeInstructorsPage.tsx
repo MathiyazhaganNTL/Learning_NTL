@@ -53,7 +53,7 @@ const INSTRUCTORS = [
     {
         id: 'inst-1',
         name: 'Dr. Sarah Wilson',
-        email: 'sarah.wilson@learnsphere.edu',
+        email: 'sarah.wilson@learn2psg.edu',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
         status: 'active',
         coursesCount: 12,
@@ -66,7 +66,7 @@ const INSTRUCTORS = [
     {
         id: 'inst-2',
         name: 'Prof. Michael Chen',
-        email: 'michael.chen@learnsphere.edu',
+        email: 'michael.chen@learn2psg.edu',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Michael',
         status: 'active',
         coursesCount: 8,
@@ -79,7 +79,7 @@ const INSTRUCTORS = [
     {
         id: 'inst-3',
         name: 'Emily Davis',
-        email: 'emily.davis@learnsphere.edu',
+        email: 'emily.davis@learn2psg.edu',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emily',
         status: 'pending',
         coursesCount: 1,
@@ -92,7 +92,7 @@ const INSTRUCTORS = [
     {
         id: 'inst-4',
         name: 'James Rodriguez',
-        email: 'j.rodriguez@learnsphere.edu',
+        email: 'j.rodriguez@learn2psg.edu',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James',
         status: 'suspended',
         coursesCount: 3,
@@ -105,7 +105,7 @@ const INSTRUCTORS = [
     {
         id: 'inst-5',
         name: 'Anita Patel',
-        email: 'anita.patel@learnsphere.edu',
+        email: 'anita.patel@learn2psg.edu',
         avatar: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Anita',
         status: 'active',
         coursesCount: 5,

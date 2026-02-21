@@ -46,9 +46,9 @@ export default function CoursesPage() {
           <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
 
           {/* Colorful Mesh Gradients (Aurora Effect) */}
-          <div className="absolute top-[-20%] left-[20%] w-[500px] h-[500px] bg-indigo-600/30 rounded-full blur-[120px] mix-blend-screen animate-pulse" />
-          <div className="absolute bottom-[-20%] right-[20%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] mix-blend-screen animate-pulse delay-1000" />
-          <div className="absolute top-[20%] right-[-10%] w-[300px] h-[300px] bg-cyan-500/20 rounded-full blur-[100px] mix-blend-screen" />
+          <div className="absolute top-[-20%] left-[20%] w-[500px] h-[500px] bg-rose-800/25 rounded-full blur-[120px] mix-blend-screen animate-pulse" />
+          <div className="absolute bottom-[-20%] right-[20%] w-[500px] h-[500px] bg-rose-900/20 rounded-full blur-[120px] mix-blend-screen animate-pulse delay-1000" />
+          <div className="absolute top-[20%] right-[-10%] w-[300px] h-[300px] bg-rose-700/15 rounded-full blur-[100px] mix-blend-screen" />
 
           {/* Subtle Grid Pattern */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
@@ -59,8 +59,8 @@ export default function CoursesPage() {
           <div className="flex flex-col items-center text-center space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
 
             {/* Statistics Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-indigo-500/30 bg-indigo-500/10 text-indigo-300 text-sm font-semibold backdrop-blur-md shadow-[0_0_15px_rgba(99,102,241,0.3)] transform hover:scale-105 transition-transform duration-300 cursor-default">
-              <TrendingUp className="w-4 h-4 text-indigo-400" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-rose-500/30 bg-rose-500/10 text-rose-300 text-sm font-semibold backdrop-blur-md shadow-[0_0_15px_rgba(123,30,58,0.3)] transform hover:scale-105 transition-transform duration-300 cursor-default">
+              <TrendingUp className="w-4 h-4 text-rose-400" />
               <span>{filteredCourses.length} Premium Courses Available</span>
             </div>
 
@@ -68,7 +68,7 @@ export default function CoursesPage() {
             <div className="max-w-4xl mx-auto space-y-4">
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-white leading-tight">
                 Unlock Your Potential with <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 animate-gradient-x">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-300 to-rose-500 animate-gradient-x">
                   Global Expert Courses
                 </span>
               </h1>
@@ -85,14 +85,14 @@ export default function CoursesPage() {
               )}>
                 {/* Glow Ring */}
                 <div className={cn(
-                  "absolute -inset-0.5 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 opacity-30 blur-lg transition-opacity duration-500",
+                  "absolute -inset-0.5 rounded-full bg-gradient-to-r from-rose-700 via-rose-600 to-rose-800 opacity-30 blur-lg transition-opacity duration-500",
                   searchFocused ? "opacity-70" : "opacity-30 group-hover:opacity-50"
                 )} />
 
                 <div className="relative flex items-center">
                   <Search className={cn(
                     "absolute left-6 h-5 w-5 transition-colors duration-300",
-                    searchFocused ? "text-indigo-400" : "text-slate-500"
+                    searchFocused ? "text-rose-400" : "text-slate-500"
                   )} />
                   <Input
                     placeholder="What do you want to learn today?"
@@ -103,7 +103,7 @@ export default function CoursesPage() {
                     className={cn(
                       "h-16 pl-14 pr-6 rounded-full text-lg transition-all duration-300",
                       "bg-slate-900/80 backdrop-blur-xl border-slate-700/50 text-slate-100 placeholder:text-slate-500 shadow-2xl",
-                      "focus-visible:ring-0 focus-visible:border-indigo-500/50"
+                      "focus-visible:ring-0 focus-visible:border-rose-500/50"
                     )}
                   />
                 </div>
@@ -121,7 +121,7 @@ export default function CoursesPage() {
                       "relative px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 border backdrop-blur-sm",
                       "hover:-translate-y-0.5",
                       selectedTag === tag
-                        ? "bg-indigo-600 border-indigo-500 text-white shadow-[0_0_20px_rgba(79,70,229,0.4)]"
+                        ? "bg-[#7B1E3A] border-[#7B1E3A] text-white shadow-[0_0_20px_rgba(123,30,58,0.4)]"
                         : "bg-slate-900/40 border-slate-800 text-slate-400 hover:bg-slate-800 hover:text-white hover:border-slate-700"
                     )}
                     style={{ animationDelay: `${index * 50}ms` }}

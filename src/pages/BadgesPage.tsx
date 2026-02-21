@@ -41,7 +41,7 @@ const BADGES = [
     name: "Consistency King",
     description: "Maintained a 7-day learning streak",
     icon: Crown,
-    color: "from-purple-400 to-indigo-500",
+    color: "from-rose-400 to-rose-700",
     glowColor: "purple",
     condition: (stats: UserStats) => stats.streak >= 7,
   },
@@ -104,7 +104,7 @@ const BADGES = [
     name: "Streak Master",
     description: "Maintained a 14-day streak",
     icon: Crown,
-    color: "from-purple-400 to-violet-500",
+    color: "from-rose-400 to-rose-600",
     glowColor: "purple",
     condition: (stats: UserStats) => stats.streak >= 14,
   },
@@ -169,16 +169,16 @@ export function GamificationPanel() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-in slide-in-from-bottom-4 fade-in duration-700">
 
         {/* Badges Earned */}
-        <div className="group relative overflow-hidden rounded-2xl border border-purple-500/20 bg-purple-500/5 p-6 text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-purple-500/10 hover:border-purple-500/40">
-          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
+        <div className="group relative overflow-hidden rounded-2xl border border-rose-500/20 bg-rose-500/5 p-6 text-center transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-rose-500/10 hover:border-rose-500/40">
+          <div className="absolute inset-0 bg-gradient-to-br from-rose-500/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
           <div className="relative z-10 flex flex-col items-center">
-            <div className="mb-3 p-3 rounded-full bg-purple-500/10 text-purple-600">
+            <div className="mb-3 p-3 rounded-full bg-rose-500/10 text-rose-700">
               <Trophy className="h-6 w-6" />
             </div>
-            <div className="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-indigo-600 drop-shadow-sm">
+            <div className="text-4xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-rose-700 to-rose-900 drop-shadow-sm">
               {unlockedCount}
             </div>
-            <div className="text-xs font-bold text-muted-foreground mt-2 group-hover:text-purple-600 transition-colors uppercase tracking-widest">Badges Earned</div>
+            <div className="text-xs font-bold text-muted-foreground mt-2 group-hover:text-rose-700 transition-colors uppercase tracking-widest">Badges Earned</div>
           </div>
         </div>
 

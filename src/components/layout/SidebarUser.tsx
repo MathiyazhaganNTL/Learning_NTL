@@ -98,7 +98,7 @@ export function SidebarUser({ user, collapsed, logout }: SidebarUserProps) {
                                 className={cn(
                                     "px-1.5 py-0 text-[10px] uppercase tracking-wider font-bold border-primary/20 bg-primary/5 text-primary/80 group-hover:bg-primary/10 group-hover:text-primary transition-colors",
                                     user?.role === 'admin' && "border-indigo-500/30 text-indigo-500 bg-indigo-500/5",
-                                    user?.role === 'instructor' && "border-purple-500/30 text-purple-500 bg-purple-500/5"
+                                    user?.role === 'instructor' && "border-rose-700/30 text-rose-700 bg-rose-500/5"
                                 )}
                             >
                                 {user?.role}

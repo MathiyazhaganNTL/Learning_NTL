@@ -631,8 +631,8 @@ export default function CourseEditorPage() {
                   className={cn(
                     "w-full font-medium transition-colors",
                     activeQuizView === 'rewards'
-                      ? "bg-purple-600 text-white hover:bg-purple-700"
-                      : "bg-purple-100 text-purple-700 hover:bg-purple-200"
+                      ? "bg-rose-700 text-white hover:bg-rose-800"
+                      : "bg-rose-100 text-rose-700 hover:bg-rose-200"
                   )}
                 >
                   Rewards

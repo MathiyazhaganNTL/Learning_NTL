@@ -43,13 +43,13 @@ export function StatCard({ title, value, icon: Icon, variant, className, descrip
 
     const variants = {
         purple: {
-            gradient: "from-violet-500/10 via-purple-500/5 to-transparent",
-            border: "border-purple-500/20 hover:border-purple-500/40",
-            iconBg: "bg-purple-500/10",
-            iconColor: "text-purple-600 dark:text-purple-400",
-            shadow: "shadow-[0_8px_30px_rgb(168,85,247,0.12)]",
-            glow: "bg-purple-500/30",
-            ring: "group-hover:ring-purple-500/20"
+            gradient: "from-rose-500/10 via-rose-500/5 to-transparent",
+            border: "border-rose-500/20 hover:border-rose-500/40",
+            iconBg: "bg-rose-500/10",
+            iconColor: "text-rose-700 dark:text-rose-400",
+            shadow: "shadow-[0_8px_30px_rgb(123,30,58,0.12)]",
+            glow: "bg-rose-500/30",
+            ring: "group-hover:ring-rose-500/20"
         },
         orange: {
             gradient: "from-orange-500/10 via-red-500/5 to-transparent",
