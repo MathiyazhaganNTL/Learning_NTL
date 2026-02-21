@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, useAuth } from "@/contexts/AuthContext";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import { AIChatBot } from "@/components/ai/AIChatBot";
 
 // Layouts
 import { LearnerLayout } from "@/components/layout/LearnerLayout";
@@ -148,6 +149,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <AppRoutes />
+            <AIChatBot />
           </BrowserRouter>
         </TooltipProvider>
       </ThemeProvider>

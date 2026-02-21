@@ -77,39 +77,6 @@ export default function CoursesPage() {
               </p>
             </div>
 
-            {/* Search Interface */}
-            <div className="w-full max-w-2xl pt-6">
-              <div className={cn(
-                "relative group transition-all duration-500 z-10",
-                searchFocused && "scale-[1.02]"
-              )}>
-                {/* Glow Ring */}
-                <div className={cn(
-                  "absolute -inset-0.5 rounded-full bg-gradient-to-r from-rose-700 via-rose-600 to-rose-800 opacity-30 blur-lg transition-opacity duration-500",
-                  searchFocused ? "opacity-70" : "opacity-30 group-hover:opacity-50"
-                )} />
-
-                <div className="relative flex items-center">
-                  <Search className={cn(
-                    "absolute left-6 h-5 w-5 transition-colors duration-300",
-                    searchFocused ? "text-rose-400" : "text-slate-500"
-                  )} />
-                  <Input
-                    placeholder="What do you want to learn today?"
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                    onFocus={() => setSearchFocused(true)}
-                    onBlur={() => setSearchFocused(false)}
-                    className={cn(
-                      "h-16 pl-14 pr-6 rounded-full text-lg transition-all duration-300",
-                      "bg-slate-900/80 backdrop-blur-xl border-slate-700/50 text-slate-100 placeholder:text-slate-500 shadow-2xl",
-                      "focus-visible:ring-0 focus-visible:border-rose-500/50"
-                    )}
-                  />
-                </div>
-              </div>
-            </div>
-
             {/* Category Pills */}
             <div className="pt-8 w-full max-w-5xl">
               <div className="flex flex-wrap justify-center gap-3">
@@ -146,6 +113,39 @@ export default function CoursesPage() {
       {/* Main Content Section - Lighter Background for Contrast */}
       <div className="min-h-[800px] bg-background relative z-10">
         <div className="container py-16">
+          {/* Search Interface */}
+          <div className="w-full max-w-2xl mx-auto mb-10">
+            <div className={cn(
+              "relative group transition-all duration-500 z-10",
+              searchFocused && "scale-[1.02]"
+            )}>
+              {/* Glow Ring */}
+              <div className={cn(
+                "absolute -inset-0.5 rounded-full bg-gradient-to-r from-rose-700 via-rose-600 to-rose-800 opacity-30 blur-lg transition-opacity duration-500",
+                searchFocused ? "opacity-70" : "opacity-30 group-hover:opacity-50"
+              )} />
+
+              <div className="relative flex items-center">
+                <Search className={cn(
+                  "absolute left-6 h-5 w-5 transition-colors duration-300",
+                  searchFocused ? "text-rose-400" : "text-slate-500"
+                )} />
+                <Input
+                  placeholder="What do you want to learn today?"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  onFocus={() => setSearchFocused(true)}
+                  onBlur={() => setSearchFocused(false)}
+                  className={cn(
+                    "h-16 pl-14 pr-6 rounded-full text-lg transition-all duration-300",
+                    "bg-slate-900/80 backdrop-blur-xl border-slate-700/50 text-slate-100 placeholder:text-slate-500 shadow-2xl",
+                    "focus-visible:ring-0 focus-visible:border-rose-500/50"
+                  )}
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-10">
             <div>
               <h2 className="text-2xl font-bold tracking-tight">Featured Courses</h2>
