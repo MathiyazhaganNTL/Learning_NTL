@@ -11,6 +11,14 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
+    proxy: {
+      '/api/qubrid': {
+        target: 'https://platform.qubrid.com',
+        changeOrigin: true,
+        rewrite: (path: string) => path.replace(/^\/api\/qubrid/, '/v1'),
+        secure: true,
+      },
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
