@@ -7,12 +7,94 @@ interface MessageBubbleProps {
     timestamp: Date;
 }
 
+/**
+ * Convert light markdown to safe HTML for rendering in chat bubbles.
+ * Handles: headings, bold, italic, inline code, bullet lists, numbered lists, and line breaks.
+ */
 function formatContent(text: string): string {
-    return text
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        .replace(/`(.*?)`/g, '<code class="px-1 py-0.5 bg-black/5 rounded text-[#7B1E3A] text-xs font-mono">$1</code>')
-        .replace(/\n/g, '<br />');
+    // Normalize line endings
+    let html = text.replace(/\r\n/g, '\n');
+
+    // Split into lines for block-level processing
+    const lines = html.split('\n');
+    const outputLines: string[] = [];
+    let inUl = false;
+    let inOl = false;
+
+    for (let i = 0; i < lines.length; i++) {
+        let line = lines[i];
+
+        // ── Headings ──
+        if (/^###\s+(.*)/.test(line)) {
+            closeList();
+            line = line.replace(/^###\s+(.*)/, '<strong style="font-size:0.85rem;display:block;margin:8px 0 4px;">$1</strong>');
+            outputLines.push(line);
+            continue;
+        }
+        if (/^##\s+(.*)/.test(line)) {
+            closeList();
+            line = line.replace(/^##\s+(.*)/, '<strong style="font-size:0.9rem;display:block;margin:8px 0 4px;">$1</strong>');
+            outputLines.push(line);
+            continue;
+        }
+        if (/^#\s+(.*)/.test(line)) {
+            closeList();
+            line = line.replace(/^#\s+(.*)/, '<strong style="font-size:0.95rem;display:block;margin:8px 0 4px;">$1</strong>');
+            outputLines.push(line);
+            continue;
+        }
+
+        // ── Horizontal rule ──
+        if (/^[-*_]{3,}\s*$/.test(line)) {
+            closeList();
+            outputLines.push('<hr style="border:none;border-top:1px solid rgba(0,0,0,0.1);margin:6px 0;" />');
+            continue;
+        }
+
+        // ── Unordered list items (-, *, •) ──
+        const ulMatch = line.match(/^\s*[-*•]\s+(.*)/);
+        if (ulMatch) {
+            if (inOl) { outputLines.push('</ol>'); inOl = false; }
+            if (!inUl) { outputLines.push('<ul style="margin:4px 0;padding-left:18px;">'); inUl = true; }
+            outputLines.push(`<li style="margin:2px 0;">${inlineFormat(ulMatch[1])}</li>`);
+            continue;
+        }
+
+        // ── Ordered list items (1. 2. etc.) ──
+        const olMatch = line.match(/^\s*\d+[.)]\s+(.*)/);
+        if (olMatch) {
+            if (inUl) { outputLines.push('</ul>'); inUl = false; }
+            if (!inOl) { outputLines.push('<ol style="margin:4px 0;padding-left:20px;">'); inOl = true; }
+            outputLines.push(`<li style="margin:2px 0;">${inlineFormat(olMatch[1])}</li>`);
+            continue;
+        }
+
+        // ── Regular line ──
+        closeList();
+        if (line.trim() === '') {
+            outputLines.push('<br />');
+        } else {
+            outputLines.push(inlineFormat(line));
+        }
+    }
+
+    // Close any open list
+    closeList();
+
+    return outputLines.join('\n');
+
+    function closeList() {
+        if (inUl) { outputLines.push('</ul>'); inUl = false; }
+        if (inOl) { outputLines.push('</ol>'); inOl = false; }
+    }
+
+    /** Handle inline formatting: bold, italic, code, links */
+    function inlineFormat(s: string): string {
+        return s
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+            .replace(/`(.*?)`/g, '<code style="padding:1px 4px;background:rgba(0,0,0,0.06);border-radius:3px;color:#7B1E3A;font-size:0.8rem;font-family:monospace;">$1</code>');
+    }
 }
 
 export function MessageBubble({ content, role, timestamp }: MessageBubbleProps) {

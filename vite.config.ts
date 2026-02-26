@@ -12,10 +12,10 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
     proxy: {
-      '/api/qubrid': {
-        target: 'https://platform.qubrid.com',
+      '/api/manus': {
+        target: 'https://api.manus.ai',
         changeOrigin: true,
-        rewrite: (path: string) => path.replace(/^\/api\/qubrid/, '/v1'),
+        rewrite: (path: string) => path.replace(/^\/api\/manus/, '/v1'),
         secure: true,
       },
     },
